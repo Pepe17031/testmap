@@ -40,7 +40,7 @@ var config = {
 
 //НАЧАЛО ПРИМЕРА 2
     WA.room.onEnterLayer("fayazone").subscribe(() => {
-        currentPopup = WA.ui.openPopup("fayapopup", 'ФАЯ: Привет, милок! Разбойники? А я то гадала кто мне грядки истоптал. Нет, не видела, но кажется слышала ночью шорох в огороде.', []);
+        currentPopup = WA.ui.openPopup("fayapopup", 'ФАЯ: Привет, милок! Разбойники? А я то гадала кто мне грядки истоптал. Нет, не видела, но кажется слышала ночью шорох в огороде. Может УГОЛЁК что-то видел...', []);
         var mysound = WA.sound.loadSound("faya.mp3");
         mysound.play(config);
     });
@@ -58,7 +58,7 @@ var config = {
 
 //НАЧАЛО ПРИМЕРА 4
     WA.room.onEnterLayer("catzone").subscribe(() => {
-        currentPopup = WA.ui.openPopup("catpopup", 'УГОЛЁК: Мяв, поспрашивай в лесу, ктонибуть из зверей должен знать код.', []);
+        currentPopup = WA.ui.openPopup("catpopup", 'УГОЛЁК: Мяв, поспрашивай в лабиринте, ктонибуть из зверей должен знать код.', []);
         var mysound = WA.sound.loadSound("myu.mp3");
         mysound.play(config);
     });
@@ -101,6 +101,24 @@ var config = {
     });
     WA.room.onLeaveLayer('lz4').subscribe(closePopUp);
 //КОНЕЦ ПРИМЕРА 8
+
+//НАЧАЛО ПРИМЕРА 9
+    WA.room.onEnterLayer("childzone").subscribe(() => {
+        currentPopup = WA.ui.openPopup("childpopup", 'Ой, вы не дядя Глеб. Но может сможете нам помочь? Мы хотим киндер, но коза съела код от холодильника. Я помню только что в нем было 5 цифр.', []);
+        var mysound = WA.sound.loadSound("yarik.mp3");
+        mysound.play(config);
+    });
+    WA.room.onLeaveLayer('childzone').subscribe(closePopUp);
+//КОНЕЦ ПРИМЕРА 9
+
+//НАЧАЛО ПРИМЕРА 10
+    WA.room.onEnterLayer("kozazone").subscribe(() => {
+        currentPopup = WA.ui.openPopup("kozapopup", 'Пожнёт награду только тот, кто в мире странности найдет.', []);
+        var mysound = WA.sound.loadSound("koza.mp3");
+        mysound.play(config);
+    });
+    WA.room.onLeaveLayer('kozazone').subscribe(closePopUp);
+//КОНЕЦ ПРИМЕРА 10
 
     // The line below bootstraps the Scripting API Extra library that adds a number of advanced properties/features to WorkAdventure
     bootstrapExtra().then(() => {
