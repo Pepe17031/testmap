@@ -120,6 +120,15 @@ var config = {
     WA.room.onLeaveLayer('kozazone').subscribe(closePopUp);
 //КОНЕЦ ПРИМЕРА 10
 
+//НАЧАЛО ПРИМЕРА 11
+    WA.room.onEnterLayer("frogzone").subscribe(() => {
+        currentPopup = WA.ui.openPopup("frogpopup", 'Посчитай буквы, ква', []);
+        var mysound = WA.sound.loadSound("kwa.mp3");
+        mysound.play(config);
+    });
+    WA.room.onLeaveLayer('frogzone').subscribe(closePopUp);
+//КОНЕЦ ПРИМЕРА 11
+
     // The line below bootstraps the Scripting API Extra library that adds a number of advanced properties/features to WorkAdventure
     bootstrapExtra().then(() => {
         console.log('Scripting API Extra ready');
