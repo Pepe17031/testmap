@@ -29,6 +29,18 @@ var config = {
 
     WA.room.onLeaveLayer('clockZone').subscribe(closePopUp);
     
+    WA.room.onEnterLayer("zzzz").subscribe(() => {
+        var triggerMessage = WA.ui.displayActionMessage({
+            message: "нажми ПРОБЕЛ чтобы осмотреть место",
+            callback: () => {
+                WA.chat.sendChatMessage("Холодное, как лед, Не дышит, но живет Всегда кольчугу носит И пьет, хоть пить не просит.", "В траве вы находите странную табличку с цифрой 1 и надписью")
+            }
+        });
+        setTimeout(() => {
+            triggerMessage.remove();
+        }, 3000)
+    });
+    
 //НАЧАЛО ПРИМЕРА 1
     WA.room.onEnterLayer("vudonzone").subscribe(() => {
         currentPopup = WA.ui.openPopup("vudonpopup", 'ВУДОН: Привет, я видел как ночью разбойники закопали клад на участке тетушки Фаи. Попробуй его найти. Но для начала тебе нужно пройти этот лабиринт.', []);
