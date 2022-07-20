@@ -192,7 +192,7 @@ var config = {
 //НАЧАЛО ПРИМЕРА 12
     WA.room.onEnterLayer("Door6openzone").subscribe(() => {
         currentPopup = WA.ui.openPopup("jorapopup", 'ЖОРА: Эй, подожди! Помоги мне сбежать! Это единственное место где нет камер, но я выронил записки с кодом и их унесло ветром. Помоги мне их собрать и открыть калитку. Если справишься, сможешь взять награду из сундука. Я видел что записки унесло в сторону леса.', []);
-        var mysound = WA.sound.loadSound("kwa.mp3");
+        var mysound = WA.sound.loadSound("jora.mp3");
         mysound.play(config);
     });
     WA.room.onLeaveLayer('Door6openzone').subscribe(closePopUp);
