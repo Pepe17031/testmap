@@ -29,18 +29,66 @@ var config = {
 
     WA.room.onLeaveLayer('clockZone').subscribe(closePopUp);
     
-    WA.room.onEnterLayer("zzzz").subscribe(() => {
+    WA.room.onEnterLayer("nz1").subscribe(() => {
         var triggerMessage = WA.ui.displayActionMessage({
-            message: "нажми ПРОБЕЛ чтобы осмотреть место",
+            message: "нажми ПРОБЕЛ чтобы поймать акулу",
             callback: () => {
-                WA.chat.sendChatMessage("Холодное, как лед, Не дышит, но живет Всегда кольчугу носит И пьет, хоть пить не просит.", "В траве вы находите странную табличку с цифрой 1 и надписью")
+                WA.chat.sendChatMessage("Холодное, как лед, Не дышит, но живет; Всегда кольчугу носит И пьет, хоть пить не просит.", "Вы достаете акулу из воды и снимаете привязанную к хвосту записку с цифрой 1")
             }
         });
         setTimeout(() => {
             triggerMessage.remove();
-        }, 3000)
+        }, 2000)
     });
     
+        WA.room.onEnterLayer("nz2").subscribe(() => {
+        var triggerMessage = WA.ui.displayActionMessage({
+            message: "нажми ПРОБЕЛ чтобы осмотреть странную плитку",
+            callback: () => {
+                WA.chat.sendChatMessage("На красных холмах Тридцать белых коней Друг другу навстречу Помчатся скорей, Ряды их сойдутся, Потом разойдутся, — И смирными станут До новых затей.", "Вы замечаете приподнятую плитку под которой лежит записка с цифрой 2")
+            }
+        });
+        setTimeout(() => {
+            triggerMessage.remove();
+        }, 2000)
+    });
+    
+        WA.room.onEnterLayer("nz3").subscribe(() => {
+        var triggerMessage = WA.ui.displayActionMessage({
+            message: "нажми ПРОБЕЛ чтобы сорвать персик",
+            callback: () => {
+                WA.chat.sendChatMessage("Без голоса кричит, Без крыльев летает, Без зубов кусает, Без рта бормочет.", "Внутри персика оказалась записка с цифрой 3")
+            }
+        });
+        setTimeout(() => {
+            triggerMessage.remove();
+        }, 2000)
+    });
+    
+        WA.room.onEnterLayer("nz4").subscribe(() => {
+        var triggerMessage = WA.ui.displayActionMessage({
+            message: "нажми ПРОБЕЛ чтобы раздвинуть ветви",
+            callback: () => {
+                WA.chat.sendChatMessage("Не увидать ее корней, Вершина выше тополей, Все вверх и вверх она идет, Но не растет.", "Внутри ветвей вы находите привязанную к баклажану записку с цифрой 4")
+            }
+        });
+        setTimeout(() => {
+            triggerMessage.remove();
+        }, 2000)
+    });
+    
+        WA.room.onEnterLayer("nz5").subscribe(() => {
+        var triggerMessage = WA.ui.displayActionMessage({
+            message: "нажми ПРОБЕЛ чтобы осмотреть корабль",
+            callback: () => {
+                WA.chat.sendChatMessage("Уничтожает все кругом: Цветы, зверей, высокий дом, — Сжует железо, сталь сожрет И скалы в порошок сотрет, Мощь городов, власть королей Его могущества слабей.", "К корме прибита записака с цифрой 5")
+            }
+        });
+        setTimeout(() => {
+            triggerMessage.remove();
+        }, 2000)
+    });
+
 //НАЧАЛО ПРИМЕРА 1
     WA.room.onEnterLayer("vudonzone").subscribe(() => {
         currentPopup = WA.ui.openPopup("vudonpopup", 'ВУДОН: Привет, я видел как ночью разбойники закопали клад на участке тетушки Фаи. Попробуй его найти. Но для начала тебе нужно пройти этот лабиринт.', []);
@@ -141,6 +189,75 @@ var config = {
     WA.room.onLeaveLayer('frogzone').subscribe(closePopUp);
 //КОНЕЦ ПРИМЕРА 11
 
+//НАЧАЛО ПРИМЕРА 12
+    WA.room.onEnterLayer("Door6openzone").subscribe(() => {
+        currentPopup = WA.ui.openPopup("jorapopup", 'ЖОРА: Эй, подожди! Помоги мне сбежать! Это единственное место где нет камер, но я выронил записки с кодом и их унесло ветром. Помоги мне их собрать и открыть калитку. Если справишься, сможешь взять награду из сундука. Я видел что записки унесло в сторону леса.', []);
+        var mysound = WA.sound.loadSound("kwa.mp3");
+        mysound.play(config);
+    });
+    WA.room.onLeaveLayer('Door6openzone').subscribe(closePopUp);
+//КОНЕЦ ПРИМЕРА 12
+
+        WA.room.onEnterLayer("jc1").subscribe(() => {
+        var triggerMessage = WA.ui.displayActionMessage({
+            message: "нажми ПРОБЕЛ чтобы осмотреться",
+            callback: () => {
+                WA.chat.sendChatMessage("Мятый клочек бумаги с цифрой 1", "Порывшись в траве вы находите")
+            }
+        });
+        setTimeout(() => {
+            triggerMessage.remove();
+        }, 2000)
+    });
+    
+            WA.room.onEnterLayer("jc2").subscribe(() => {
+        var triggerMessage = WA.ui.displayActionMessage({
+            message: "нажми ПРОБЕЛ чтобы осмотреться",
+            callback: () => {
+                WA.chat.sendChatMessage("Мятый клочек бумаги с цифрой 4", "Засунув руку в дупло вы находите")
+            }
+        });
+        setTimeout(() => {
+            triggerMessage.remove();
+        }, 2000)
+    });
+    
+            WA.room.onEnterLayer("jc3").subscribe(() => {
+        var triggerMessage = WA.ui.displayActionMessage({
+            message: "нажми ПРОБЕЛ чтобы осмотреться",
+            callback: () => {
+                WA.chat.sendChatMessage("Мятый клочек бумаги с цифрой 2", "Под деревом вы находите")
+            }
+        });
+        setTimeout(() => {
+            triggerMessage.remove();
+        }, 2000)
+    });
+    
+            WA.room.onEnterLayer("jc4").subscribe(() => {
+        var triggerMessage = WA.ui.displayActionMessage({
+            message: "нажми ПРОБЕЛ чтобы осмотреться",
+            callback: () => {
+                WA.chat.sendChatMessage("Мятый клочек бумаги с цифрой 3", "В птичьем гнзде вы находите")
+            }
+        });
+        setTimeout(() => {
+            triggerMessage.remove();
+        }, 2000)
+    });
+
+            WA.room.onEnterLayer("jc555").subscribe(() => {
+        var triggerMessage = WA.ui.displayActionMessage({
+            message: "нажми ПРОБЕЛ чтобы осмотреться",
+            callback: () => {
+                WA.chat.sendChatMessage("Но так ничего и не находите", "Вы перебираете все листья в округе")
+            }
+        });
+        setTimeout(() => {
+            triggerMessage.remove();
+        }, 2000)
+    });
+    
     // The line below bootstraps the Scripting API Extra library that adds a number of advanced properties/features to WorkAdventure
     bootstrapExtra().then(() => {
         console.log('Scripting API Extra ready');
