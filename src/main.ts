@@ -198,6 +198,15 @@ var config = {
     WA.room.onLeaveLayer('Door6openzone').subscribe(closePopUp);
 //КОНЕЦ ПРИМЕРА 12
 
+//НАЧАЛО ПРИМЕРА 13
+    WA.room.onEnterLayer("bcatzone").subscribe(() => {
+        currentPopup = WA.ui.openPopup("bcatpopup", 'СКОРО ЗДЕСЬ БУДЕТ РАСПИСАНИЕ МЕРОПРИЯТИЯ, А ПОКА: Зима, стоят мужики на остановке. Один достаёт сигарету и грит мол Огоньку не найдётся? Второй достаёт зажигалку, бензиновую, а она протекла по всей куртке. Чиркает, загорается вся рука. Ну а первый закуривает прям от руки: -Ну ты бля фокусник!', []);
+        var mysound = WA.sound.loadSound("myu.mp3");
+        mysound.play(config);
+    });
+    WA.room.onLeaveLayer('bcatzone').subscribe(closePopUp);
+//КОНЕЦ ПРИМЕРА 13
+
         WA.room.onEnterLayer("jc1").subscribe(() => {
         var triggerMessage = WA.ui.displayActionMessage({
             message: "нажми ПРОБЕЛ чтобы осмотреться",
